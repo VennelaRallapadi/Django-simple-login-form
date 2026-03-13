@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Form</title>
+    <style>
+    * {
+        box-sizing: border-box;
+        padding: 0px;
+        margin: 0px;
+    }
+    .nav-bar {
+        display: flex;
+        width: 100vw;
+        height: 40px;
+        background-color: midnightblue;
+        align-items: center;
+    }
+    .nav-items {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        margin-left: 10px;   /* Fix 2: added missing semicolon */
+    }
+    .footer-bar{
+        position:fixed;
+        bottom:0px;
+        display:flex;
+        flex-direction:column;
+        width:100vw;
+        height:40px;
+        align-items:center;
+        justify-content:center;
+        background-color:orange;
+
+
+    }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <ul class="nav-items">
+            <li><a href="{% url 'home' %}">Home</a></li>       <!-- Fix 1: added space after url -->
+            <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'profiles' %}">Profiles</a></li>
+            <li><a href="{% url 'transport' %}">Transport</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+    </div>
+    <div>
+        {% block content%}
+        {% endblock content%}
+    </div>
+    <div class="footer-bar">
+        <p style="text-align:center;"></p>Copyrights@2024-25</p>
+    </div>
+</body>
+</html>
